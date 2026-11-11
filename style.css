@@ -1,0 +1,265 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Rubik+Mono+One&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #ff00a8, #00eaff, #c6ff00, #a000ff);
+    background-size: 400% 400%;
+    animation: gradient 7s infinite alternate;
+    font-family: 'Comic Neue', cursive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.floating {
+    position: fixed;
+    font-size: 65px;
+    pointer-events: none;
+    animation: float 4s infinite ease-in-out;
+    z-index: -1;
+}
+
+.f1 { top: 5%; left: 5%; }
+.f2 { top: 10%; right: 7%; animation-delay: 1s; }
+.f3 { bottom: 5%; left: 8%; animation-delay: 2s; }
+.f4 { bottom: 8%; right: 8%; animation-delay: 1.5s; }
+
+@keyframes float {
+    50% {
+        transform: translateY(-25px) rotate(25deg);
+    }
+}
+
+.calculator {
+    width: 390px;
+    max-width: 100%;
+    background: #111;
+    padding: 16px;
+    border: 7px dashed #ff00ff;
+    box-shadow: 12px 12px 0 #00ffff,
+                -7px -7px 0 #ffff00;
+    transform: rotate(-1deg);
+    position: relative;
+}
+
+h1 {
+    color: #ffff00;
+    font-family: 'Rubik Mono One', sans-serif;
+    font-size: 25px;
+    text-align: center;
+    text-shadow: 4px 4px #ff0088;
+    margin: 8px 0;
+    animation: title 1s infinite alternate;
+}
+
+@keyframes title {
+    to { transform: rotate(2deg) scale(1.03); }
+}
+
+.subtitle {
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.meme {
+    background: #ffff00;
+    color: #111;
+    border: 4px solid #ff00cc;
+    padding: 8px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 12px;
+    transform: rotate(1deg);
+}
+
+.display {
+    width: 100%;
+    height: 72px;
+    background: #00ff88;
+    border: 5px ridge #ff00ff;
+    color: #111;
+    font-family: monospace;
+    font-size: 28px;
+    text-align: right;
+    padding: 10px;
+    outline: none;
+}
+
+.level {
+    color: #00ffff;
+    font-size: 12px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.progress {
+    height: 12px;
+    background: #444;
+    border: 2px solid white;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #ff00cc, yellow, #00ff88);
+    transition: width .3s;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.key {
+    height: 55px;
+    background: #ff00bb;
+    color: white;
+    border: 4px outset #fff;
+    font-size: 22px;
+    font-family: 'Comic Neue', cursive;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 3px 3px #00ffff;
+    transition: .1s;
+}
+
+.key:nth-child(even) {
+    background: #00ccff;
+    color: #111;
+}
+
+.key:nth-child(3n) {
+    background: #aaff00;
+    color: #111;
+}
+
+.key:hover {
+    transform: rotate(7deg) scale(1.1);
+    background: yellow;
+}
+
+.key:active {
+    transform: scale(.85);
+}
+
+.operator {
+    background: #ff6600 !important;
+    color: white !important;
+}
+
+.equal {
+    background: #ffff00 !important;
+    color: #ff0066 !important;
+    grid-row: span 2;
+    height: 118px;
+}
+
+.clear {
+    background: red !important;
+    color: white !important;
+}
+
+.comment {
+    min-height: 53px;
+    background: #222;
+    border: 3px dotted #00ffff;
+    color: #ffff00;
+    margin-top: 15px;
+    padding: 9px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.history {
+    margin-top: 12px;
+    padding: 9px;
+    background: #292929;
+    border: 2px solid #ff00ff;
+    color: white;
+    font-size: 12px;
+    max-height: 100px;
+    overflow-y: auto;
+}
+
+.history-title {
+    color: #00ffff;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.history-item {
+    border-bottom: 1px dashed #555;
+    padding: 4px;
+}
+
+.footer {
+    color: #ff00ff;
+    font-size: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.shake {
+    animation: shake .35s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: rotate(-1deg) translate(0,0); }
+    25% { transform: rotate(3deg) translate(-8px,5px); }
+    50% { transform: rotate(-4deg) translate(8px,-5px); }
+    75% { transform: rotate(3deg) translate(-5px,-4px); }
+}
+
+#bigMeme {
+    position: fixed;
+    inset: 0;
+    background: #000c;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    padding: 20px;
+}
+
+.meme-box {
+    background: #ffff00;
+    color: #111;
+    padding: 25px;
+    border: 8px dashed #ff00ff;
+    text-align: center;
+    max-width: 320px;
+    font-size: 22px;
+    transform: rotate(-3deg);
+}
+
+.meme-box button {
+    margin-top: 15px;
+    padding: 10px 25px;
+    background: #ff00bb;
+    border: 3px outset white;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+

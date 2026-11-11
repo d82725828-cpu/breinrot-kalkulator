@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BRAINROT CALCULATOR 💀</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="floating f1">💀</div>
+<div class="floating f2">🗿</div>
+<div class="floating f3">🤡</div>
+<div class="floating f4">🍌</div>
+
+<div class="calculator" id="calculator">
+
+    <h1>BRAINROT</h1>
+
+    <div class="subtitle">
+        🗿 ULTIMATE MATH EXPERIENCE 💀
+    </div>
+
+    <div class="meme" id="topMeme">
+        ONLY SIGMAS CAN CALCULATE 🗿
+    </div>
+
+    <input class="display" id="display" value="0" readonly>
+
+    <div class="level">
+        🧠 BRAINROT LEVEL: <span id="level">0</span>%
+    </div>
+
+    <div class="progress">
+        <div class="progress-fill" id="progress"></div>
+    </div>
+
+    <div class="buttons">
+
+        <button class="key clear" onclick="clearDisplay()">AC</button>
+        <button class="key" onclick="del()">⌫</button>
+        <button class="key operator" onclick="add('/')">÷</button>
+        <button class="key operator" onclick="add('*')">×</button>
+
+        <button class="key" onclick="add('7')">7</button>
+        <button class="key" onclick="add('8')">8</button>
+        <button class="key" onclick="add('9')">9</button>
+        <button class="key operator" onclick="add('-')">−</button>
+
+        <button class="key" onclick="add('4')">4</button>
+        <button class="key" onclick="add('5')">5</button>
+        <button class="key" onclick="add('6')">6</button>
+        <button class="key operator" onclick="add('+')">+</button>
+
+        <button class="key" onclick="add('1')">1</button>
+        <button class="key" onclick="add('2')">2</button>
+        <button class="key" onclick="add('3')">3</button>
+
+        <button class="key equal" onclick="calculate()">=</button>
+
+        <button class="key" onclick="add('0')">0</button>
+        <button class="key" onclick="add('.')">.</button>
+        <button class="key" onclick="add('00')">00</button>
+
+    </div>
+
+    <div class="comment" id="comment">
+        💀 Введи число, братан...
+    </div>
+
+    <div class="history">
+        <div class="history-title">📜 HISTORY OF SIGMAS</div>
+        <div id="history">История пока пуста...</div>
+    </div>
+
+    <div class="footer">
+        <span>SKIBIDI MATH ©</span>
+        <span>VERSION 6.9</span>
+    </div>
+
+</div>
+
+<div id="bigMeme">
+    <div class="meme-box">
+        <div style="font-size:65px" id="memeEmoji">💀</div>
+        <div id="memeText">YOU ARE SIGMA</div>
+        <button onclick="closeMeme()">OK BRO 🗿</button>
+    </div>
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
